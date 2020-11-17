@@ -95,7 +95,7 @@ video {
 }
 
 .like-button {
-    background-image: url(../images/like.png);
+    background-image: url(../assets/like.png);
     background-size: 15px;
     background-repeat: no-repeat;
     background-position: 5px center;

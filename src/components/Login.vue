@@ -51,7 +51,7 @@ export default {
 }
 
 #login-container {
-    background-image: url(../images/logo.png);
+    background-image: url(../assets/logo.png);
     background-size: 20% auto;
     background-repeat: no-repeat;
     background-position: 15px 15px;
