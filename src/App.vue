@@ -21,24 +21,21 @@
       </div>
     </nav>
   </header>
-  <!--
+  
     <Login/>
-  -->
+  
 </template>
 
 <script>
-import Browse from './components/Browse.vue'
+//import Browse from './components/Browse.vue'
 import Login from './components/Login.vue'
-import Suggestion from './components/Suggestion.vue'
-import Post from './components/Post.vue'
+//import Suggestion from './components/Suggestion.vue'
+//import Post from './components/Post.vue'
 
 export default {
   name: 'App',
   components: {
-    Browse,
-    Login,
-    Post,
-    Suggestion
+    Login
   }
 }
 </script>
