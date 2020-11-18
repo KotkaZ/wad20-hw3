@@ -1,45 +1,44 @@
 <template>
-  <header>
-    <nav>
-      <div class="logo-container">
-          <img src="res/images/logo.png" alt="postIt">
-      </div>
-      <div class="search-container">
-          <input type="text" name="search">
-          <button type="button">Search</button>
-      </div>
-      <div class="avatar-container">
-          <input id="avatarIco" type="image" src="res/images/avatar.png" class="avatar" alt="Me" />
 
-          <div id="profileDropdown" class="dropdown-content">
-              <h3 id="nameUser"></h3>
-              <h3 id="emailUser"></h3>
-              <hr>
-              <a href="browse.html">Browse</a>
-              <a href="login.html">Logout</a>
-          </div>
-      </div>
-    </nav>
-  </header>
-  
-    <Login/>
-  
+  <div id="app">
+    <router-view></router-view>
+  </div>
+
 </template>
 
 <script>
 //import Browse from './components/Browse.vue'
-import Login from './components/Login.vue'
+//import Login from './components/Login.vue'
+//import Main from "@/components/Main";
 //import Suggestion from './components/Suggestion.vue'
 //import Post from './components/Post.vue'
+//import Header from './components/Header.vue'
 
-export default {
-  name: 'App',
-  components: {
-    Login
-  }
-}
 </script>
 
 <style>
+  * {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  body {
+    background-color: #0277bd;
+    color: #263238;
+  }
+
+  button {
+    padding: 8px 16px;
+    margin: 4px 0;
+    color: #ffffff;
+    background-color: #01579b;
+    border: none;
+    border-radius: 4px;
+  }
+
+  button:hover {
+    box-shadow: 0 0 5px rgba(38, 50, 56, 0.7);
+    cursor: pointer;
+  }
+
 
 </style>

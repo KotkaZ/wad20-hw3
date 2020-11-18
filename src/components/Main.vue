@@ -1,34 +1,31 @@
 <template>
   <div>
     <Header/>
-    <section class="main-container"></section>
+    <section class="main-container">
+      <Post/>
+      <router-view></router-view>
+    </section>
+
   </div>
+
 
 </template>
 
 <script>
-import Header from "@/components/Header";
+
+import Header from './Header.vue'
+import Post from "./Post.vue";
 
 export default {
   name: 'Main',
   components: {
-    Header
+    Header,
+    Post
   }
 }
 </script>
 
 <style>
-
-.follow-button{
-  background-color: #82008f;
-}
-
-.follow-button.followed{
-  background-color: #ffffff;
-  border: 1px solid #82008f;
-  color: #82008f;
-}
-
 .main-container {
   width: 50%;
   min-height: 100%;
