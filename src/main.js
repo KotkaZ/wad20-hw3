@@ -7,10 +7,11 @@ import Browse from "./components/Browse";
 import Main from "./components/Main";
 import Axios from 'axios';
 
+
+Vue.prototype.$http = Axios
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
 Vue.use(Vuex);
-Vue.use(Axios);
 
 const routes = [
     { path: '/', component: Login },

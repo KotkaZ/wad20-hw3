@@ -21,6 +21,12 @@ export default {
   components: {
     Header,
     Post
+  },
+  created(){
+    this.$http.get("https://private-anon-a878d01bcd-wad20postit.apiary-mock.com/posts")
+      .then((result) => {
+        console.log(result.data);
+      })
   }
 }
 </script>

@@ -13,6 +13,12 @@ export default {
   name: 'Main',
   components: {
     Header
+  },
+  created(){
+    this.$http.get("https://private-anon-4dfe848681-wad20postit.apiary-mock.com/profiles")
+      .then((result) => {
+        console.log(result.data);
+      })
   }
 }
 </script>
