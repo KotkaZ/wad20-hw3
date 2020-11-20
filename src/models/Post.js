@@ -8,5 +8,5 @@ export default class Post {
         this.mediaUrl = mediaUrl;
         this.text = text;
         this.likes = likes;
-    };
-};
+    }
+}

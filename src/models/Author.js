@@ -3,5 +3,5 @@
           this.avatar = avatar;
           this.firstname = firstname;
           this.lastname = lastname;
-      };
-  };
+      }
+  }

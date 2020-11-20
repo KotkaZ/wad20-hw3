@@ -4,5 +4,5 @@ export default class Suggestion {
         this.firstname = firstname;
         this.lastname = lastname;
         this.followed = false;
-    };
-};
+    }
+}
