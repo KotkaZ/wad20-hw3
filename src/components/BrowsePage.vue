@@ -15,7 +15,7 @@ import Header from "@/components/Header";
 import Suggestion from '@/components/Suggestion';
 
 export default {
-  name: 'Main',
+  name: 'BrowsePage',
   components: {
     Header,
     Suggestion

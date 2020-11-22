@@ -38,6 +38,7 @@
 
 
 export default {
+  name: "Header",
   data() {
     return {
       isHidden: true

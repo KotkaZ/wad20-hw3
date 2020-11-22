@@ -25,6 +25,7 @@
 <script>
 import Post from "../models/Post"
 export default {
+    name: "Post",
     props: {
         post: Post,
     },

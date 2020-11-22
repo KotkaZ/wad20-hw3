@@ -10,6 +10,7 @@
 <script>
 import Suggestion from "../models/Suggestion"
 export default {
+    name: "Post",
     props: {
         suggestion: Suggestion,
     },

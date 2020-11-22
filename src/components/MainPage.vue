@@ -16,7 +16,7 @@ import Header from './Header.vue'
 import Post from "./Post.vue";
 
 export default {
-  name: 'Main',
+  name: 'MainPage',
   components: {
     Header,
     Post
