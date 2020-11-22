@@ -6,7 +6,7 @@
                 <img :src="post.author.avatar" alt="Post author">
                 <small>{{authorName}}</small>
             </span>
-            <small>{{post.createtime}}</small>
+            <small>{{post.createTime}}</small>
         </div>
 
         <div class="post-image">
@@ -19,7 +19,9 @@
         </div>
 
         <div class="post-title"><h3>{{post.text}}</h3></div>
-        <div class="post-actions"><button type="button" name="like" class="like-button">{{post.likes}}</button></div>
+        <div class="post-actions">
+            <button type="button" name="like" @click="liked = !liked" class="like-button" :class="{liked : liked}">{{post.likes}}</button>
+        </div>
     </div>
 </template>
 
@@ -28,6 +30,11 @@
 export default {
     name: "Post",
     props: ["post"],
+    data(){
+        return {
+            liked: false
+        }
+    },
     computed:{
         authorName: function() {
             return `${this.post.author.firstname} ${this.post.author.lastname}`
