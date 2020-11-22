@@ -2,17 +2,16 @@
   <div>
     <Header/>
     <section class="main-container">
-      <Suggestion v-for="suggestion in this.$store.suggestions" :key='suggestion' :suggestion='suggestion></Suggestion>
+      <Suggestion v-for="suggestion in allSuggestions" :key='suggestion.id' :suggestion='suggestion'></Suggestion>
     </section>
   </div>
-
-  
 
 </template>
 
 <script>
 import Header from "@/components/Header";
 import Suggestion from '@/components/Suggestion';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'BrowsePage',
@@ -20,13 +19,12 @@ export default {
     Header,
     Suggestion
   },
-  created()
-    {
-    this.$http.get("https://private-anon-4dfe848681-wad20postit.apiary-mock.com/profiles")
-      .then((result) => {
-        console.log(result.data);
-      })
+  computed: mapGetters(["allSuggestions"]),
+  methods: mapActions(["fetchSuggestions"]),
+  created() {
+    this.fetchSuggestions();
   }
+
 }
 </script>
 

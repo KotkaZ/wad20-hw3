@@ -11,10 +11,10 @@
         <button type="button">Search</button>
       </div>
       <div class="avatar-container">
-        <img class="avatar" src="../assets/avatar.png" alt="Avatar" @click="isHidden = !isHidden">
+        <img class="avatar" :src="currentUser.avatar" alt="Avatar" @click="isHidden = !isHidden">
         <div v-if="!isHidden" class="drop-down-container">
-          <span id="user-name">John Doe</span>
-          <span id="user-email">Something@email.com</span>
+          <span id="user-name">{{currentUser.firstname}} {{currentUser.lastname}}</span>
+          <span id="user-email">{{currentUser.email}}</span>
           <span class="separator"></span>
           <span>
                 <router-link to="/browse"><a>Browse</a></router-link>
@@ -32,10 +32,7 @@
 </template>
 
 <script>
-//import Browse from './components/Browse.vue'
-//import Login from './components/Login.vue'
-//import Post from './components/Post.vue'
-
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: "Header",
@@ -45,11 +42,14 @@ export default {
     }
   },
   methods: {
+    ...mapActions(["fetchUser"]),
     toggleDropdown: function (event) {
-      //console.log(this)
       event.target.classList.toggle('is-open')
-      //this.siblings('.drop-down-container').toggle()
     }
+  },
+  computed: mapGetters(['currentUser']),
+  created() {
+    this.fetchUser();
   }
 }
 

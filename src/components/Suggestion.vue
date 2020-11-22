@@ -1,6 +1,6 @@
 <template>
     <div class="browse-user">
-        <div class="browse-image-container"><img src="{{suggestion.avatar}}"></div>
+        <div class="browse-image-container"><img :src="suggestion.avatar"></div>
         <p class="browse-user-text">{{suggestion.firstname}} {{suggestion.lastname}}</p>
         <button class="browse-follow-button" @click="toggleFollow">Follow</button>
     </div>
@@ -12,7 +12,7 @@ import Suggestion from "../models/Suggestion"
 export default {
     name: "Post",
     props: {
-        suggestion: Suggestion,
+        suggestion: Object,
     },
     methods: {
         toggleFollow: (button) => {

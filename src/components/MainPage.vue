@@ -14,7 +14,7 @@
 
 import Header from './Header.vue';
 import Post from "./Post.vue";
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'MainPage',
@@ -22,7 +22,13 @@ export default {
     Header,
     Post
   },
-  computed: mapGetters(['allPosts'])
+  methods: {
+    ...mapActions(["fetchPosts"])
+  },
+  computed: mapGetters(['allPosts']),
+  created() {
+    this.fetchPosts();
+  }
 }
 </script>
 
