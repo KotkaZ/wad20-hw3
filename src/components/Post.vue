@@ -32,7 +32,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .post {
     width: 80%;
     margin: 15px auto;

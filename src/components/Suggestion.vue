@@ -29,7 +29,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .browse-user {
     flex: 0 0 calc(50% - 8px);
     border: 1px solid #e6e6e6;

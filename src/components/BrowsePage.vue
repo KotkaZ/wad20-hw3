@@ -30,7 +30,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 .follow-button{
   background-color: #82008f;
