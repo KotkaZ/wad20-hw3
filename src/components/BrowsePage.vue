@@ -1,9 +1,14 @@
 <template>
   <div>
     <Header/>
-    <section class="main-container">
-      <Suggestion v-for="suggestion in allSuggestions" :key='suggestion.id' :suggestion='suggestion'></Suggestion>
+    <section class="browse">
+      <section class="browse-inner">
+        <div class="browse-users">
+          <Suggestion v-for="suggestion in allSuggestions" :key='suggestion.id' :suggestion='suggestion'></Suggestion>
+        </div>
+      </section>
     </section>
+      
   </div>
 
 </template>
@@ -29,22 +34,22 @@ export default {
 </script>
 
 <style scoped>
-
-.follow-button{
-  background-color: #82008f;
+.browse {
+    padding-top: 50px;
+    height: calc(100% - 100px);
 }
 
-.follow-button.followed{
-  background-color: #ffffff;
-  border: 1px solid #82008f;
-  color: #82008f;
+.browse-inner {
+    background: #ffffff;
+    height: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 50px;
 }
 
-.main-container {
-  width: 50%;
-  min-height: 100%;
-  margin: auto auto;
-  padding: 90px 15px 15px 15px;
-  background-color: #ffffff;
+.browse-users {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 20px;
 }
 </style>

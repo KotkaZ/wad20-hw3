@@ -4,7 +4,7 @@
         <div class="post-author">
             <span class="post-author-info">
                 <img :src="post.author.avatar" alt="Post author">
-                <small>{{post.author.firstname}} {{post.author.lastname}}</small>
+                <small>{{authorName}}</small>
             </span>
             <small>{{post.createtime}}</small>
         </div>
@@ -27,9 +27,12 @@
 //import Post from "../models/Post"
 export default {
     name: "Post",
-    props: {
-        post: Object,
-    },
+    props: ["post"],
+    computed:{
+        authorName: function() {
+            return `${this.post.author.firstname} ${this.post.author.lastname}`
+        }
+    }
 }
 </script>
 

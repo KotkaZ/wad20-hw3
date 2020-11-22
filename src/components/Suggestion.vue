@@ -1,29 +1,27 @@
 <template>
     <div class="browse-user">
         <div class="browse-image-container"><img :src="suggestion.avatar"></div>
-        <p class="browse-user-text">{{suggestion.firstname}} {{suggestion.lastname}}</p>
-        <button class="browse-follow-button" @click="toggleFollow">Follow</button>
+        <p class="browse-user-text">{{fullname}}</p>
+        <button class="browse-follow-button"
+            @click="followed = !followed" 
+            v-text="followed ? 'Followed' : 'Follow'"
+            :class='{"was-pressed": followed}'
+        >Follow</button>
     </div>
-    <!-- exmple for future :class="{'was-pressed':suggestion.followed}"-->
 </template>
 
 <script>
-import Suggestion from "../models/Suggestion"
 export default {
     name: "Post",
-    props: {
-        suggestion: Object,
+    props: ["suggestion"],
+    data(){
+        return {
+            followed: false
+        }
     },
-    methods: {
-        toggleFollow: (button) => {
-            this.suggestion.followed = !this.suggestion.followed
-            if (button.hasClass('was-pressed')) {
-                button.removeClass('was-pressed');
-                button.text('Follow');
-            } else {
-                button.addClass('was-pressed');
-                button.text('Followed');
-            }
+    computed:{
+        fullname: function() {
+            return `${this.suggestion.firstname} ${this.suggestion.lastname}`
         }
     }
 }
