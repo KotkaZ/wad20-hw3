@@ -1,13 +1,20 @@
 <template>
   <div>
     <Header/>
-    <section class="main-container"></section>
+    <section class="main-container">
+    </section>
+    <div id="app">
+      {{ info }}
+    </div>
   </div>
+
+  
 
 </template>
 
 <script>
 import Header from "@/components/Header";
+import Vue from 'vue'
 
 export default {
   name: 'Main',

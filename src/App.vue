@@ -7,12 +7,7 @@
 </template>
 
 <script>
-//import Browse from './components/Browse.vue'
-//import Login from './components/Login.vue'
-//import Main from "@/components/Main";
-//import Suggestion from './components/Suggestion.vue'
-//import Post from './components/Post.vue'
-//import Header from './components/Header.vue'
+
 
 </script>
 
