@@ -25,7 +25,7 @@ const router = new VueRouter({ routes });
 
 const store = new Vuex.Store({
     state: {
-        user: {},
+        user: null,
         suggestions: [],
         posts: []
     },

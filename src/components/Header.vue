@@ -11,7 +11,9 @@
         <button type="button">Search</button>
       </div>
       <div class="avatar-container">
-        <img class="avatar" :src="currentUser.avatar" alt="Avatar" @click="isHidden = !isHidden">
+        <img v-if="!currentUser" class="avatar" src="../assets/avatar.png" alt="Avatar placeholder">
+        
+        <img v-else class="avatar" :src="currentUser.avatar" alt="Avatar" @click="isHidden = !isHidden">
         <div v-if="!isHidden" class="drop-down-container">
           <span id="user-name">{{currentUser.firstname}} {{currentUser.lastname}}</span>
           <span id="user-email">{{currentUser.email}}</span>
