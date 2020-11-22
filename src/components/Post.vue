@@ -3,17 +3,18 @@
 
         <div class="post-author">
             <span class="post-author-info">
-                <img src="{{post.author.avatar}}" alt="Post author">
+                <img :src="post.author.avatar" alt="Post author">
                 <small>{{post.author.firstname}} {{post.author.lastname}}</small>
             </span>
             <small>{{post.createtime}}</small>
         </div>
 
         <div class="post-image">
-            <img vue-if="post.media === 'img'" src="{{postMedia.url}}" alt="">
+            <img v-if="post.media && post.media.type === 'image'" :src="post.media.url" alt="">
             
-            <video vue-else-if="post.media === 'video'" width="320" height="240" controls>
-            <source src="{{postMedia.url}}" type="video/mp4">Your browser does not support the video tag.</video>
+            <video v-else-if="post.media && post.media.type === 'video'" width="320" height="240" controls>
+                <source :src="post.media.url" type="video/mp4">Your browser does not support the video tag.
+            </video>
         
         </div>
 
@@ -23,11 +24,11 @@
 </template>
 
 <script>
-import Post from "../models/Post"
+//import Post from "../models/Post"
 export default {
     name: "Post",
     props: {
-        post: Post,
+        post: Object,
     },
 }
 </script>
