@@ -4,7 +4,7 @@
         <p class="browse-user-text">{{suggestion.firstname}} {{suggestion.lastname}}</p>
         <button class="browse-follow-button" @click="toggleFollow">Follow</button>
     </div>
-
+    <!-- exmple for future :class="{'was-pressed':suggestion.followed}"-->
 </template>
 
 <script>

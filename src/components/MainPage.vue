@@ -1,8 +1,8 @@
 <template>
   <div>
     <Header/>
-    <section class="main-container">
-      <Post v-for="post in this.$store.posts" :key='post' :post='post' ></Post>
+    <section class="main-container" v-for="post in this.$store.posts" :key='post' >
+      <Post :post='post' ></Post>
     </section>
 
   </div>

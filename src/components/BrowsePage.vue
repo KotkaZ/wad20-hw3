@@ -1,8 +1,8 @@
 <template>
   <div>
     <Header/>
-    <section class="main-container">
-      <Suggestion v-for="suggestion in this.$store.suggestions" :key='suggestion' :suggestion='suggestion' ></Suggestion>
+    <section class="main-container" v-for="suggestion in this.$store.suggestions" :key='suggestion'>
+      <Suggestion :suggestion='suggestion' ></Suggestion>
     </section>
   </div>
 
