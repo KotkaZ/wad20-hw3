@@ -3,28 +3,31 @@
 
         <div class="post-author">
             <span class="post-author-info">
-                <img src="${postOwner.avatar}" alt="Post author">
-                <small>{{postOwner.firstname}} {{postOwner.lastname}}</small>
+                <img src="{{post.author.avatar}}" alt="Post author">
+                <small>{{post.author.firstname}} {{post.author.lastname}}</small>
             </span>
-            <small>{{post.createTime}}</small>
+            <small>{{post.createtime}}</small>
         </div>
 
         <div class="post-image">
-            <img src="${postMedia.url}" alt="">
-            <!--
-                <video width="320" height="240" controls>` +
-                <source src="${postMedia.url}" type="video/mp4">Your browser does not support the video tag.</video>
-            -->
+            <img vue-if="post.media === 'img'" src="{{postMedia.url}}" alt="">
+            
+            <video vue-else-if="post.media === 'video'" width="320" height="240" controls>
+            <source src="{{postMedia.url}}" type="video/mp4">Your browser does not support the video tag.</video>
+        
         </div>
 
-        <div class="post-title"><h3>${post.text}</h3></div>
-        <div class="post-actions"><button type="button" name="like" class="like-button">${post.likes}</button></div>
+        <div class="post-title"><h3>{{post.text}}</h3></div>
+        <div class="post-actions"><button type="button" name="like" class="like-button">{{post.likes}}</button></div>
     </div>
 </template>
 
 <script>
+import Post from "../models/Post"
 export default {
-
+    props: {
+        post: Post,
+    },
 }
 </script>
 

@@ -2,10 +2,8 @@
   <div>
     <Header/>
     <section class="main-container">
+      <Suggestion v-for="suggestion in this.$store.suggestions" :key='suggestion' :suggestion='suggestion' ></Suggestion>
     </section>
-    <div id="app">
-      {{ info }}
-    </div>
   </div>
 
   
@@ -14,14 +12,16 @@
 
 <script>
 import Header from "@/components/Header";
-import Vue from 'vue'
+import Suggestion from '@/components/Suggestion';
 
 export default {
   name: 'Main',
   components: {
-    Header
+    Header,
+    Suggestion
   },
-  created(){
+  created()
+    {
     this.$http.get("https://private-anon-4dfe848681-wad20postit.apiary-mock.com/profiles")
       .then((result) => {
         console.log(result.data);

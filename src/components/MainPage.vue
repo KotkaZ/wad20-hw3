@@ -2,8 +2,7 @@
   <div>
     <Header/>
     <section class="main-container">
-      <Post/>
-      <router-view></router-view>
+      <Post v-for="post in this.$store.posts" :key='post' :post='post' ></Post>
     </section>
 
   </div>
